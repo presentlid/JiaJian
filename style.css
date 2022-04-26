@@ -1,0 +1,154 @@
+/* init */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+*::before, *::after {box-sizing: border-box;} 
+ul, ol {list-style: none;}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* style */
+body {background-color: #eee;}
+
+.globalHeader {
+/* globalHeader 就指向 header，全局只有一个 header，为什么这里要多余地给它命名？ */
+/* 答：如果其他人乱写代码，在其他地方自己瞎写了 header，那么他的代码就会影响到这里的代码 */
+/*    因此，在哪要写代码，就给那个标签起个类名，这样就能保证别人瞎写也难以影响到我的代码 */
+    margin: 20px;
+}
+@media (min-width: 500px) {
+    .globalHeader {
+        max-width: 500px;
+        margin: 60px auto;
+    }
+}
+.searchForm {
+    display: flex;
+    justify-content: space-between;
+}
+.searchForm > input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    margin-right: 10px;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+}
+.searchForm > button {
+    white-space: nowrap;
+    background-color: #259CDF;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 28px;
+    border: none;
+}
+
+.siteList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.siteList > li {
+    border: solid 1px #ddd;
+    margin-bottom: 10px;
+    position: relative;
+}
+@media (min-width: 500px) {
+    .globalMain {
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .siteList {
+        justify-content: flex-start;
+        padding: 0;
+        margin-right: -25px;
+    }
+    .siteList > li {
+        margin-right: 25px;
+    }
+    .siteList .site:hover .icon-close {
+        display: block;
+        cursor: default;
+    }
+}
+.globalMain {
+    position: relative;
+}
+.siteList .site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 158px;
+    background-color: #fff;
+    padding: 20px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.siteList .logo {
+    font-size: 64px;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.siteList .link {
+    font-size: 14px;
+    margin-top: 8px;
+}
+.siteList .icon-close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    top: 5px;
+    display: none;
+}
+.siteList .addSite {
+    background-color: #fff;
+    width: 158px;
+    padding: 20px 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.siteList .addSite .icon-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.siteList .addSite .icon-wrapper .icon {
+    width: 56px;
+    height: 56px;
+}
+.siteList .addSite .iconText {
+    margin-top: 8px;
+    font-size: 14px;
+}
+.icon-menu {
+    display: block;
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    top: 100%;
+    left: 100%;
+    transform: translate(-110%, -110%);
+}
+@media (min-width: 500px) {
+    .icon-menu {
+        display: none;
+    }
+}

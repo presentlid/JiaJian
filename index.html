@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="globalHeader">
+        <form action="https://www.baidu.com/s" class="searchForm">
+            <input name="wd" type="text">
+            <button>搜索</button>
+            <!-- button 不加 type 则默认 type = ‘submit’ -->
+        </form>
+    </header>
+    <main class="globalMain">
+        <ul class="siteList">
+            <li class="lastLi">
+                <div class="addSite">
+                    <div class="icon-wrapper">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-add"></use>
+                        </svg>
+                    </div>
+                    <div class="iconText">新增网站</div>
+                </div>
+            </li>
+        </ul>
+        <svg class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </main>
+
+    <script src="//at.alicdn.com/t/font_3359621_erz9rrp9d5q.js"></script>
+    <!-- 引入其他网站提供的图标 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 引入jQuery库，注意要是 min 版 -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
